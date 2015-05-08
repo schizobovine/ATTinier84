@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="100" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="2" altunitdist="mil" altunit="mil"/>
+<grid distance="100" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
@@ -3997,22 +3997,24 @@ Source: AVX .. aphvc.pdf</description>
 <hole x="10" y="-11.75" drill="2.5"/>
 </package>
 <package name="ATTINIER84_SHIELD2_SMD">
-<wire x1="-16.4" y1="-9.15" x2="-11.65" y2="-13.9" width="0.1524" layer="21"/>
-<wire x1="-10.65" y1="-14.4" x2="14.9" y2="-14.4" width="0.1524" layer="21"/>
-<wire x1="14.9" y1="-14.4" x2="16.9" y2="-12.4" width="0.1524" layer="21" curve="90"/>
-<wire x1="16.9" y1="-12.4" x2="16.9" y2="8.15" width="0.1524" layer="21"/>
-<wire x1="10.65" y1="14.4" x2="-14.9" y2="14.4" width="0.1524" layer="21"/>
-<wire x1="-14.9" y1="14.4" x2="-16.9" y2="12.4" width="0.1524" layer="21" curve="90"/>
-<wire x1="-16.9" y1="12.4" x2="-16.9" y2="-8.15" width="0.1524" layer="21"/>
+<wire x1="-15.4" y1="12.4" x2="-15.4" y2="-12.4" width="0.1524" layer="21"/>
+<wire x1="-15.4" y1="-12.4" x2="-13.4" y2="-14.4" width="0.1524" layer="21" curve="90"/>
+<wire x1="-13.4" y1="-14.4" x2="13.4" y2="-14.4" width="0.1524" layer="21"/>
+<wire x1="-15.4" y1="12.4" x2="-13.4" y2="14.4" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-13.4" y1="14.4" x2="13.4" y2="14.4" width="0.1524" layer="21"/>
+<wire x1="13.4" y1="14.4" x2="15.4" y2="12.4" width="0.1524" layer="21" curve="-90"/>
+<wire x1="13.4" y1="-14.4" x2="15.4" y2="-12.4" width="0.1524" layer="21" curve="90"/>
+<wire x1="15.4" y1="-12.4" x2="15.4" y2="12.4" width="0.1524" layer="21"/>
 <circle x="-10" y="11.75" radius="1.5" width="0.1524" layer="21"/>
 <circle x="10" y="-11.75" radius="1.5" width="0.1524" layer="21"/>
-<wire x1="10.75" y1="14.5" x2="-15" y2="14.5" width="0" layer="20"/>
-<wire x1="17" y1="8.25" x2="17" y2="-12.5" width="0" layer="20"/>
-<wire x1="17" y1="-12.5" x2="15" y2="-14.5" width="0" layer="20" curve="-90"/>
-<wire x1="15" y1="-14.5" x2="-10.75" y2="-14.5" width="0" layer="20"/>
-<wire x1="-11.75" y1="-14" x2="-16.5" y2="-9.25" width="0" layer="20"/>
-<wire x1="-15" y1="14.5" x2="-17" y2="12.5" width="0" layer="20" curve="90"/>
-<wire x1="-17" y1="12.5" x2="-17" y2="-8.25" width="0" layer="20"/>
+<wire x1="13.5" y1="-14.5" x2="-13.5" y2="-14.5" width="0" layer="20"/>
+<wire x1="-13.5" y1="-14.5" x2="-15.5" y2="-12.5" width="0" layer="20" curve="-90"/>
+<wire x1="-15.5" y1="-12.5" x2="-15.5" y2="12.5" width="0" layer="20"/>
+<wire x1="-15.5" y1="12.5" x2="-13.5" y2="14.5" width="0" layer="20" curve="-90"/>
+<wire x1="-13.5" y1="14.5" x2="13.5" y2="14.5" width="0" layer="20"/>
+<wire x1="13.5" y1="14.5" x2="15.5" y2="12.5" width="0" layer="20" curve="-90"/>
+<wire x1="15.5" y1="12.5" x2="15.5" y2="-12.5" width="0" layer="20"/>
+<wire x1="15.5" y1="-12.5" x2="13.5" y2="-14.5" width="0" layer="20" curve="-90"/>
 <hole x="-10" y="11.75" drill="2.5"/>
 <hole x="10" y="-11.75" drill="2.5"/>
 <text x="-6.66" y="-8.89" size="0.8" layer="21" font="vector" ratio="12" rot="R90" align="top-center">0</text>
@@ -4031,32 +4033,22 @@ Source: AVX .. aphvc.pdf</description>
 <text x="6.73" y="8.89" size="0.8" layer="21" font="vector" ratio="12" rot="SR270" align="top-center">GND</text>
 <text x="6.73" y="-6.35" size="0.8" layer="21" font="vector" ratio="12" rot="SR270" align="top-center">GND</text>
 <text x="6.73" y="-8.89" size="0.8" layer="21" font="vector" ratio="12" rot="SR270" align="top-center">VCC</text>
-<smd name="PA7" x="-13.405" y="8.89" dx="5.08" dy="1.27" layer="1"/>
-<smd name="PA4" x="-9.595" y="1.27" dx="5.08" dy="1.27" layer="1"/>
-<smd name="PA2" x="-9.595" y="-3.81" dx="5.08" dy="1.27" layer="1"/>
-<smd name="PA0" x="-9.595" y="-8.89" dx="5.08" dy="1.27" layer="1"/>
-<smd name="PA6" x="-9.595" y="6.35" dx="5.08" dy="1.27" layer="1"/>
-<smd name="PA5" x="-13.405" y="3.81" dx="5.08" dy="1.27" layer="1"/>
-<smd name="PA3" x="-13.405" y="-1.27" dx="5.08" dy="1.27" layer="1"/>
-<smd name="PA1" x="-13.405" y="-6.35" dx="5.08" dy="1.27" layer="1"/>
-<smd name="GND@1" x="9.595" y="8.89" dx="5.08" dy="1.27" layer="1"/>
-<smd name="PB2" x="13.405" y="1.27" dx="5.08" dy="1.27" layer="1"/>
-<smd name="PB0" x="13.405" y="-3.81" dx="5.08" dy="1.27" layer="1"/>
-<smd name="VCC" x="13.405" y="-8.89" dx="5.08" dy="1.27" layer="1"/>
-<smd name="RAW" x="13.405" y="6.35" dx="5.08" dy="1.27" layer="1"/>
-<smd name="RST" x="9.595" y="3.81" dx="5.08" dy="1.27" layer="1"/>
-<smd name="PB1" x="9.595" y="-1.27" dx="5.08" dy="1.27" layer="1"/>
-<smd name="GND@2" x="9.595" y="-6.35" dx="5.08" dy="1.27" layer="1"/>
-<wire x1="-16.9" y1="-8.15" x2="-16.4" y2="-9.15" width="0.1524" layer="21" curve="45"/>
-<wire x1="-11.65" y1="-13.9" x2="-10.65" y2="-14.4" width="0.1524" layer="21" curve="45"/>
-<wire x1="16.5" y1="9.25" x2="17" y2="8.25" width="0" layer="20" curve="-45"/>
-<wire x1="10.75" y1="14.5" x2="11.75" y2="14" width="0" layer="20" curve="-45"/>
-<wire x1="11.75" y1="14" x2="16.5" y2="9.25" width="0" layer="20"/>
-<wire x1="16.9" y1="8.15" x2="16.4" y2="9.15" width="0.1524" layer="21" curve="45"/>
-<wire x1="10.65" y1="14.4" x2="11.65" y2="13.9" width="0.1524" layer="21" curve="-45"/>
-<wire x1="11.65" y1="13.9" x2="16.4" y2="9.15" width="0.1524" layer="21"/>
-<wire x1="-17" y1="-8.25" x2="-16.5" y2="-9.25" width="0" layer="20" curve="45"/>
-<wire x1="-11.75" y1="-14" x2="-10.75" y2="-14.5" width="0" layer="20" curve="45"/>
+<smd name="PA7" x="-10" y="8.89" dx="5.715" dy="1.27" layer="1"/>
+<smd name="PA4" x="-10" y="1.27" dx="5.715" dy="1.27" layer="1"/>
+<smd name="PA2" x="-10" y="-3.81" dx="5.715" dy="1.27" layer="1"/>
+<smd name="PA0" x="-10" y="-8.89" dx="5.715" dy="1.27" layer="1"/>
+<smd name="PA6" x="-10" y="6.35" dx="5.715" dy="1.27" layer="1"/>
+<smd name="PA5" x="-10" y="3.81" dx="5.715" dy="1.27" layer="1"/>
+<smd name="PA3" x="-10" y="-1.27" dx="5.715" dy="1.27" layer="1"/>
+<smd name="PA1" x="-10" y="-6.35" dx="5.715" dy="1.27" layer="1"/>
+<smd name="GND@1" x="10" y="8.89" dx="5.715" dy="1.27" layer="1"/>
+<smd name="PB2" x="10" y="1.27" dx="5.715" dy="1.27" layer="1"/>
+<smd name="PB0" x="10" y="-3.81" dx="5.715" dy="1.27" layer="1"/>
+<smd name="VCC" x="10" y="-8.89" dx="5.715" dy="1.27" layer="1"/>
+<smd name="RAW" x="10" y="6.35" dx="5.715" dy="1.27" layer="1"/>
+<smd name="RST" x="10" y="3.81" dx="5.715" dy="1.27" layer="1"/>
+<smd name="PB1" x="10" y="-1.27" dx="5.715" dy="1.27" layer="1"/>
+<smd name="GND@2" x="10" y="-6.35" dx="5.715" dy="1.27" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -6176,6 +6168,7 @@ Standard 8.5x11 US Letter frame</description>
 </library>
 </libraries>
 <attributes>
+<attribute name="REVISION" value="3.0"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -6184,7 +6177,9 @@ Standard 8.5x11 US Letter frame</description>
 </class>
 </classes>
 <parts>
-<part name="FRAME1" library="A_butts" deviceset="FRAME-LETTER" device="NO_PACKAGE"/>
+<part name="FRAME1" library="A_butts" deviceset="FRAME-LETTER" device="NO_PACKAGE">
+<attribute name="VERSION" value=""/>
+</part>
 <part name="BATT" library="A_butts" deviceset="BATTERY-COIN" device="CR2032_SMD" value="CR2032"/>
 <part name="IC1" library="A_butts" deviceset="ATTINY84" device=""/>
 <part name="R1" library="A_butts" deviceset="RESISTOR" device="R0805" value="10k"/>
@@ -6194,7 +6189,7 @@ Standard 8.5x11 US Letter frame</description>
 <part name="C1" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="C0805" value="0.1uF"/>
 <part name="SUPPLY2" library="A_butts" deviceset="VCC" device=""/>
 <part name="SUPPLY3" library="A_butts" deviceset="VCC" device=""/>
-<part name="RESET" library="A_butts" deviceset="SPST-NO-TACT" device="3MM-PTH-SMALL-PADS" value="SPST-NO-TACT3MM-PTH-SMALL-PADS"/>
+<part name="RESET" library="A_butts" deviceset="SPST-NO-TACT" device="3MM-RA" value="SPST-NO-TACT3MM-RA"/>
 <part name="GND3" library="A_butts" deviceset="GND" device=""/>
 <part name="U1" library="A_butts" deviceset="ATTINIER84_SHIELD" device="1551GSMD" value="ATTINIER84_SHIELD1551GSMD"/>
 <part name="SUPPLY6" library="A_butts" deviceset="VCC" device=""/>
@@ -6441,10 +6436,10 @@ Standard 8.5x11 US Letter frame</description>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="BATT" gate="G$1" pin="+"/>
-<wire x1="50.8" y1="43.18" x2="50.8" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="PWR" gate="G$1" pin="COM"/>
-<wire x1="50.8" y1="45.72" x2="55.88" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="45.72" x2="55.88" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="BATT" gate="G$1" pin="+1"/>
+<wire x1="48.26" y1="40.64" x2="48.26" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

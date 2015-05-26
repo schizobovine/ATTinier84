@@ -11,8 +11,8 @@ const int8_t PIN_F = 9;
 const int8_t PIN_G = 5;
 const int8_t PIN_P = -1;
 
-const int8_t DIG_1 = 2;
-const int8_t DIG_2 = 7;
+const int8_t PIN_1 = 2;
+const int8_t PIN_2 = 7;
 
 const int8_t TMP36_VCC = 0;
 const int8_t TMP36_OUT = 1;
@@ -21,52 +21,19 @@ const size_t NUM_READINGS = 8;
 
 const int BLINK_DELAY = 50; //ms
 
+const double VCC = 5.0;
+const int ADC_PRECISION = 10;
+
 SegmentDisplay display = SegmentDisplay(
   PIN_A, PIN_B, PIN_C, PIN_D, PIN_E, PIN_F, PIN_G, PIN_P,
-  DIG_1, DIG_2, -1, -1, true
+  PIN_1, PIN_2, -1, -1, true
 );
 
-void test_display() {
-
-  // Initialize display to known state by setting all pins to high impedance
-  SET_Z(PIN_A);
-  SET_Z(PIN_B);
-  SET_Z(PIN_C);
-  SET_Z(PIN_D);
-  SET_Z(PIN_E);
-  SET_Z(PIN_F);
-  SET_Z(PIN_G);
-  SET_Z(PIN_P);
-  SET_Z(DIG_1);
-  SET_Z(DIG_2);
-
-  // Digit 1 test individual segments
-  SET_L(DIG_1);
-  SET_H(PIN_A); delay(BLINK_DELAY); SET_Z(PIN_A);
-  SET_H(PIN_B); delay(BLINK_DELAY); SET_Z(PIN_B);
-  SET_H(PIN_C); delay(BLINK_DELAY); SET_Z(PIN_C);
-  SET_H(PIN_D); delay(BLINK_DELAY); SET_Z(PIN_D);
-  SET_H(PIN_E); delay(BLINK_DELAY); SET_Z(PIN_E);
-  SET_H(PIN_F); delay(BLINK_DELAY); SET_Z(PIN_F);
-  SET_H(PIN_G); delay(BLINK_DELAY); SET_Z(PIN_G);
-  SET_H(PIN_P); delay(BLINK_DELAY); SET_Z(PIN_P);
-  SET_Z(DIG_1);
-
-  // Digit 2 test individual segments
-  SET_L(DIG_2);
-  SET_H(PIN_A); delay(BLINK_DELAY); SET_Z(PIN_A);
-  SET_H(PIN_B); delay(BLINK_DELAY); SET_Z(PIN_B);
-  SET_H(PIN_C); delay(BLINK_DELAY); SET_Z(PIN_C);
-  SET_H(PIN_D); delay(BLINK_DELAY); SET_Z(PIN_D);
-  SET_H(PIN_E); delay(BLINK_DELAY); SET_Z(PIN_E);
-  SET_H(PIN_F); delay(BLINK_DELAY); SET_Z(PIN_F);
-  SET_H(PIN_G); delay(BLINK_DELAY); SET_Z(PIN_G);
-  SET_H(PIN_P); delay(BLINK_DELAY); SET_Z(PIN_P);
-  SET_Z(DIG_2);
-
+double adc_to_centigrade(int adc) {
+  return 100*adc*(VCC / (1 << ADC_PRECISION)) - 50;
 }
 
-int read_tmp36() {
+double read_tmp36() {
   int32_t sum = 0;
 
   // Power up sensor and wait for warm-up
@@ -83,20 +50,17 @@ int read_tmp36() {
   digitalWrite(TMP36_VCC, LOW);
 
   // Return average
-  return sum / NUM_READINGS;
+  return adc_to_centigrade(sum / NUM_READINGS);
 }
 
 void setup() {
-
   pinMode(TMP36_VCC, OUTPUT);
   pinMode(TMP36_OUT, INPUT);
-
+  display.init();
 }
 
 void loop() {
-
-  // Test display
-  test_display();
-
-  delay(1000);
+  //usec t = (millis() / 1000) % 100;
+  int t = (int)read_tmp36();
+  display.display(t % 100, 10);
 }

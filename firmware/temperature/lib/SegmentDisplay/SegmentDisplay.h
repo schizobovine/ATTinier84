@@ -2,18 +2,19 @@
 #define __SEGMENTDISPLAYLIB_H__
 
 #include <Arduino.h>
+#include "usec.h"
 
-#define SET_HELPER(pin, mode, value) \
+#define SET_PIN(pin, mode, value) \
   do { \
-    if ((pin) > 0) { \
+    if ((pin) >= 0) { \
+      pinMode((pin), (mode)); \
       digitalWrite((pin), (value)); \
-      pinMode((pin), (value)); \
     } \
   } while (0)
 
-#define SET_H(pin) SET_HELPER((pin), OUTPUT, HIGH)
-#define SET_L(pin) SET_HELPER((pin), OUTPUT, LOW)
-#define SET_Z(pin) SET_HELPER((pin), INPUT, HIGH)
+#define SET_H(pin) SET_PIN((pin), OUTPUT, HIGH)
+#define SET_L(pin) SET_PIN((pin), OUTPUT, LOW)
+#define SET_Z(pin) SET_PIN((pin), INPUT, HIGH)
 
 /*
  *  Digit Layout
@@ -115,7 +116,10 @@ class SegmentDisplay {
       boolean cc
     );
 
+    void init();
     void test();
+    void test2();
+    void display(int n, usec timeout);
 
   private:
 
@@ -136,7 +140,12 @@ class SegmentDisplay {
     int8_t dig_4 = 0;
 
     // Direction of LED digits (true if common cathode, false if common anode)
-    boolean cc = true;
+    bool cc = true;
+
+    // Current display buffer
+    int num;
+
+    void setSegments(int8_t value);
     
 };
 

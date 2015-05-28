@@ -84,16 +84,6 @@ class SegmentDisplay {
     SegmentDisplay(
       int8_t pin_a, int8_t pin_b, int8_t pin_c, int8_t pin_d,
       int8_t pin_e, int8_t pin_f, int8_t pin_g, int8_t pin_p,
-      int8_t dig_1, int8_t dig_2, int8_t dig_3
-    );
-    SegmentDisplay(
-      int8_t pin_a, int8_t pin_b, int8_t pin_c, int8_t pin_d,
-      int8_t pin_e, int8_t pin_f, int8_t pin_g, int8_t pin_p,
-      int8_t dig_1, int8_t dig_2, int8_t dig_3, int8_t dig_4
-    );
-    SegmentDisplay(
-      int8_t pin_a, int8_t pin_b, int8_t pin_c, int8_t pin_d,
-      int8_t pin_e, int8_t pin_f, int8_t pin_g, int8_t pin_p,
       int8_t dig_1,
       boolean cc
     );
@@ -101,18 +91,6 @@ class SegmentDisplay {
       int8_t pin_a, int8_t pin_b, int8_t pin_c, int8_t pin_d,
       int8_t pin_e, int8_t pin_f, int8_t pin_g, int8_t pin_p,
       int8_t dig_1, int8_t dig_2,
-      boolean cc
-    );
-    SegmentDisplay(
-      int8_t pin_a, int8_t pin_b, int8_t pin_c, int8_t pin_d,
-      int8_t pin_e, int8_t pin_f, int8_t pin_g, int8_t pin_p,
-      int8_t dig_1, int8_t dig_2, int8_t dig_3,
-      boolean cc
-    );
-    SegmentDisplay(
-      int8_t pin_a, int8_t pin_b, int8_t pin_c, int8_t pin_d,
-      int8_t pin_e, int8_t pin_f, int8_t pin_g, int8_t pin_p,
-      int8_t dig_1, int8_t dig_2, int8_t dig_3, int8_t dig_4,
       boolean cc
     );
 
@@ -136,8 +114,6 @@ class SegmentDisplay {
     // Digits
     int8_t dig_1 = 0;
     int8_t dig_2 = 0;
-    int8_t dig_3 = 0;
-    int8_t dig_4 = 0;
 
     // Direction of LED digits (true if common cathode, false if common anode)
     bool cc = true;

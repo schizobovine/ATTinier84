@@ -17,7 +17,7 @@ SegmentDisplay::SegmentDisplay(
   int8_t e, int8_t f, int8_t g, int8_t p,
   int8_t dig1
 ) {
-  SegmentDisplay(a, b, c, d, e, f, g, p, dig1, -1, -1, -1, true);
+  SegmentDisplay(a, b, c, d, e, f, g, p, dig1, -1, true);
 }
 
 SegmentDisplay::SegmentDisplay(
@@ -25,23 +25,7 @@ SegmentDisplay::SegmentDisplay(
   int8_t e, int8_t f, int8_t g, int8_t p,
   int8_t dig1, int8_t dig2
 ) {
-  SegmentDisplay(a, b, c, d, e, f, g, p, dig1, dig2, -1, -1, true);
-}
-
-SegmentDisplay::SegmentDisplay(
-  int8_t a, int8_t b, int8_t c, int8_t d,
-  int8_t e, int8_t f, int8_t g, int8_t p,
-  int8_t dig1, int8_t dig2, int8_t dig3
-) {
-  SegmentDisplay(a, b, c, d, e, f, g, p, dig1, dig2, dig3, -1, true);
-}
-
-SegmentDisplay::SegmentDisplay(
-  int8_t a, int8_t b, int8_t c, int8_t d,
-  int8_t e, int8_t f, int8_t g, int8_t p,
-  int8_t dig1, int8_t dig2, int8_t dig3, int8_t dig4
-) {
-  SegmentDisplay(a, b, c, d, e, f, g, p, dig1, dig2, dig3, dig4, true);
+  SegmentDisplay(a, b, c, d, e, f, g, p, dig1, dig2, true);
 }
 
 SegmentDisplay::SegmentDisplay(
@@ -50,31 +34,13 @@ SegmentDisplay::SegmentDisplay(
   int8_t dig1,
   boolean _cc
 ) {
-  SegmentDisplay(a, b, c, d, e, f, g, p, dig1, -1, -1, -1, _cc);
+  SegmentDisplay(a, b, c, d, e, f, g, p, dig1, -1, _cc);
 }
 
 SegmentDisplay::SegmentDisplay(
   int8_t a, int8_t b, int8_t c, int8_t d,
   int8_t e, int8_t f, int8_t g, int8_t p,
   int8_t dig1, int8_t dig2,
-  boolean _cc
-) {
-  SegmentDisplay(a, b, c, d, e, f, g, p, dig1, dig2, -1, -1, _cc);
-}
-
-SegmentDisplay::SegmentDisplay(
-  int8_t a, int8_t b, int8_t c, int8_t d,
-  int8_t e, int8_t f, int8_t g, int8_t p,
-  int8_t dig1, int8_t dig2, int8_t dig3,
-  boolean _cc
-) {
-  SegmentDisplay(a, b, c, d, e, f, g, p, dig1, dig2, dig3, -1, _cc);
-}
-
-SegmentDisplay::SegmentDisplay(
-  int8_t a, int8_t b, int8_t c, int8_t d,
-  int8_t e, int8_t f, int8_t g, int8_t p,
-  int8_t dig1, int8_t dig2, int8_t dig3, int8_t dig4,
   boolean _cc
 ) {
   this->pin_a = a;
@@ -87,8 +53,6 @@ SegmentDisplay::SegmentDisplay(
   this->pin_p = p;
   this->dig_1 = dig1;
   this->dig_2 = dig2;
-  this->dig_3 = dig3;
-  this->dig_4 = dig4;
   this->cc = _cc;
   //this->init();
 }
@@ -107,8 +71,6 @@ void SegmentDisplay::init() {
 
   SET_Z(dig_1);
   SET_Z(dig_2);
-  SET_Z(dig_3);
-  SET_Z(dig_4);
 
 }
 
@@ -141,32 +103,6 @@ void SegmentDisplay::test() {
     SET_Z(dig_2);
   }
 
-  if (dig_3 >= 0) {
-    SET_L(dig_3);
-    SET_H(pin_a); delay(pwm_delay); SET_Z(pin_a);
-    SET_H(pin_b); delay(pwm_delay); SET_Z(pin_b);
-    SET_H(pin_c); delay(pwm_delay); SET_Z(pin_c);
-    SET_H(pin_d); delay(pwm_delay); SET_Z(pin_d);
-    SET_H(pin_e); delay(pwm_delay); SET_Z(pin_e);
-    SET_H(pin_f); delay(pwm_delay); SET_Z(pin_f);
-    SET_H(pin_g); delay(pwm_delay); SET_Z(pin_g);
-    SET_H(pin_p); delay(pwm_delay); SET_Z(pin_p);
-    SET_Z(dig_3);
-  }
-
-  if (dig_4 >= 0) {
-    SET_L(dig_4);
-    SET_H(pin_a); delay(pwm_delay); SET_Z(pin_a);
-    SET_H(pin_b); delay(pwm_delay); SET_Z(pin_b);
-    SET_H(pin_c); delay(pwm_delay); SET_Z(pin_c);
-    SET_H(pin_d); delay(pwm_delay); SET_Z(pin_d);
-    SET_H(pin_e); delay(pwm_delay); SET_Z(pin_e);
-    SET_H(pin_f); delay(pwm_delay); SET_Z(pin_f);
-    SET_H(pin_g); delay(pwm_delay); SET_Z(pin_g);
-    SET_H(pin_p); delay(pwm_delay); SET_Z(pin_p);
-    SET_Z(dig_4);
-  }
-
 }
 
 void SegmentDisplay::test2() {
@@ -190,39 +126,15 @@ void SegmentDisplay::test2() {
     }
   }
 
-  if (dig_3 >= 0) {
-    for (int8_t i=0; i<10; i++) {
-      setSegments(i);
-      SET_L(dig_3);
-      delay(pwm_delay);
-      SET_Z(dig_3);
-    }
-  }
-
-  if (dig_4 >= 0) {
-    for (int8_t i=0; i<10; i++) {
-      setSegments(i);
-      SET_L(dig_4);
-      delay(pwm_delay);
-      SET_Z(dig_4);
-    }
-  }
-
 }
 
 void SegmentDisplay::display(int n, usec timeout) {
   int8_t dig1val = 0;
   int8_t dig2val = 0;
-  int8_t dig3val = 0;
-  int8_t dig4val = 0;
 
   dig1val = n % 10;
   n /= 10;
   dig2val = n % 10;
-  n /= 10;
-  dig3val = n % 10;
-  n /= 10;
-  dig4val = n % 10;
 
   if (dig_1 >= 0) {
     setSegments(dig1val);
@@ -231,25 +143,11 @@ void SegmentDisplay::display(int n, usec timeout) {
     SET_Z(dig_1);
   }
 
-  if (dig_2 >= 0 && (dig2val > 0 || dig3val > 0 || dig4val > 0)) {
+  if (dig_2 >= 0 && (dig2val > 0)) {
     setSegments(dig2val);
     SET_PIN(dig_2, OUTPUT, (cc ? LOW : HIGH));
     delay(timeout);
     SET_Z(dig_2);
-  }
-
-  if (dig_3 >= 0 && (dig3val > 0 || dig4val > 0)) {
-    setSegments(dig3val);
-    SET_PIN(dig_3, OUTPUT, (cc ? LOW : HIGH));
-    delay(timeout);
-    SET_Z(dig_3);
-  }
-
-  if (dig_4 >= 0 && dig4val > 0) {
-    setSegments(dig4val);
-    SET_PIN(dig_4, OUTPUT, (cc ? LOW : HIGH));
-    delay(timeout);
-    SET_Z(dig_4);
   }
 
 }

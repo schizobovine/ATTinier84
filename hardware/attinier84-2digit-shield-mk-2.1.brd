@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.25" unitdist="mm" unit="mm" style="lines" multiple="2" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
+<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="2" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -635,18 +635,18 @@ Please make sure your boards conform to these design rules.</description>
 <element name="U1" library="A_butts" package="ATTINIER84_SHIELD2" value="ATTINIER84_SHIELD1551G" x="14.5" y="15.5" rot="R90"/>
 <element name="DISPLAY1" library="A_butts" package="7SEG_2DIG_14MM" value="7SEG_2DIG14MM" x="14.5" y="15.5"/>
 <element name="IC1" library="A_butts" package="TO-92-AMMO" value="TMP36" x="3.5" y="15.5" smashed="yes" rot="R270">
-<attribute name="VALUE" x="1.599" y="15.5" size="0.8" layer="21" font="vector" ratio="12" rot="R270" align="top-center"/>
+<attribute name="VALUE" x="1.5" y="15.5" size="0.8" layer="21" font="vector" ratio="12" rot="R270" align="top-center"/>
 </element>
 <element name="U$1" library="A_butts" package="CC-BY-SA-4.0-NO-URL" value="" x="7.5" y="15.5" rot="MR0"/>
 <element name="U$2" library="A_butts" package="COW_SMALL_METAL" value="" x="14.5" y="16.75" rot="MR0"/>
 <element name="U$3" library="A_butts" package="OSHWLOGO_BOT_0.2_A" value="" x="21.5" y="15.5"/>
-<element name="C1" library="A_butts" package="C025-024X044" value="0.1uF" x="3.5" y="21.66" smashed="yes" rot="R90">
-<attribute name="NAME" x="2.624" y="21.75" size="0.7" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="4.446" y="21.75" size="0.7" layer="27" font="vector" ratio="12" rot="R270" align="bottom-center"/>
+<element name="C1" library="A_butts" package="C025-024X044" value="0.1uF" x="4.34" y="21" smashed="yes" rot="R180">
+<attribute name="NAME" x="4.34" y="20" size="0.7" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
+<attribute name="VALUE" x="4.34" y="22" size="0.7" layer="27" font="vector" ratio="12" align="bottom-center"/>
 </element>
 <element name="C2" library="A_butts" package="C025-024X044" value="0.1uF" x="4.34" y="10" smashed="yes" rot="R180">
-<attribute name="NAME" x="4.25" y="9.124" size="0.7" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
-<attribute name="VALUE" x="4.25" y="10.946" size="0.7" layer="27" font="vector" ratio="12" align="bottom-center"/>
+<attribute name="NAME" x="4.34" y="9" size="0.7" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
+<attribute name="VALUE" x="4.34" y="11" size="0.7" layer="27" font="vector" ratio="12" align="bottom-center"/>
 </element>
 <element name="S1" library="A_butts" package="DTS-3-SMALL-PADS" value="SPST-NO-TACT3MM-PTH-SMALL-PADS" x="25.5" y="15.5" rot="R90"/>
 </elements>
@@ -670,9 +670,10 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="C1" pad="1"/>
 <contactref element="IC1" pad="1"/>
 <wire x1="23.39" y1="25.5" x2="20.39" y2="22.5" width="0.3" layer="16"/>
-<wire x1="20.39" y1="22.5" x2="5.61" y2="22.5" width="0.3" layer="16"/>
-<wire x1="5.61" y1="22.5" x2="3.5" y2="20.39" width="0.3" layer="16"/>
-<wire x1="3.5" y1="18.04" x2="3.5" y2="20.39" width="0.3" layer="1"/>
+<wire x1="20.39" y1="22.5" x2="7.11" y2="22.5" width="0.3" layer="16"/>
+<wire x1="7.11" y1="22.5" x2="5.61" y2="21" width="0.3" layer="16"/>
+<wire x1="5.61" y1="21" x2="5.61" y2="20.15" width="0.3" layer="1"/>
+<wire x1="5.61" y1="20.15" x2="3.5" y2="18.04" width="0.3" layer="1"/>
 </signal>
 <signal name="DIG2">
 <contactref element="DISPLAY1" pad="10"/>
